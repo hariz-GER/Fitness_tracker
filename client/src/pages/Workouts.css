@@ -1,7 +1,26 @@
-/* 🎨 FUNKY WORKOUTS PAGE */
+/* 🏋️ STREET GYM WORKOUTS */
 
 .workouts-page {
     animation: fadeIn 0.5s ease;
+}
+
+.page-header h1 {
+    font-family: 'Bangers', cursive;
+    font-size: 2.5rem;
+    font-weight: 400;
+    color: #00d4c8;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    text-shadow: 3px 3px 0 #ff1493;
+}
+
+.page-header p {
+    font-family: 'Russo One', sans-serif;
+    color: #808080;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
 }
 
 .page-header {
@@ -13,52 +32,28 @@
     gap: 16px;
 }
 
-.page-header h1 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2rem;
-    font-weight: 800;
-    background: linear-gradient(135deg, #ff00ff 0%, #00ffff 50%, #39ff14 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 4px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.page-header p {
-    color: #b366ff;
-    font-size: 1rem;
-    margin: 0;
-}
-
 .add-btn {
-    height: 50px !important;
+    height: 52px !important;
     padding: 0 28px !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.08em !important;
-    background: linear-gradient(135deg, #ff00ff 0%, #ff6b00 100%) !important;
+    font-family: 'Bangers', cursive !important;
+    font-size: 1.2rem !important;
+    letter-spacing: 0.1em !important;
+    background: linear-gradient(135deg, #00d4c8 0%, #ff1493 100%) !important;
     border: none !important;
-    border-radius: 14px !important;
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.3) !important;
+    border-radius: 12px !important;
+    box-shadow: 0 4px 0 #008b7a;
 }
 
 .add-btn:hover {
-    transform: translateY(-3px) !important;
-    box-shadow: 0 0 30px rgba(255, 0, 255, 0.5), 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 0 #008b7a, 0 8px 20px rgba(0, 212, 200, 0.3) !important;
 }
 
 /* Quick Stats */
-.quick-stats {
-    margin-bottom: 24px;
-}
-
 .quick-stat-card {
     text-align: center;
     padding: 24px 16px !important;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .quick-stat-card::before {
@@ -67,60 +62,38 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
-    background: linear-gradient(90deg, #ff00ff, #00ffff, #39ff14);
-    opacity: 0.8;
+    height: 4px;
+    background: linear-gradient(90deg, #00d4c8, #ff1493);
 }
 
 .quick-stat-card:hover {
-    transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 0 40px rgba(0, 255, 255, 0.3) !important;
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(0, 212, 200, 0.25) !important;
 }
 
 .quick-stat-icon {
-    font-size: 36px;
+    font-size: 40px;
     margin-bottom: 12px;
-    animation: bounce 2s ease-in-out infinite;
-}
-
-@keyframes bounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-8px);
-    }
 }
 
 .quick-stat-value {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 2.25rem;
-    font-weight: 800;
-    color: #00ffff;
+    font-family: 'Bangers', cursive;
+    font-size: 2.5rem;
+    color: #00d4c8;
     line-height: 1;
     margin-bottom: 8px;
-    text-shadow: 0 0 20px rgba(0, 255, 255, 0.4);
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 .quick-stat-label {
+    font-family: 'Russo One', sans-serif;
     font-size: 0.85rem;
-    color: #b366ff;
-    font-weight: 600;
+    color: #808080;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
-/* Loading & Empty States */
-.loading-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 300px;
-}
-
+/* Empty State */
 .empty-card {
     padding: 80px 20px !important;
     text-align: center;
@@ -130,55 +103,26 @@
     font-size: 80px;
     display: block;
     margin-bottom: 24px;
-    animation: float 3s ease-in-out infinite, rainbow 5s linear infinite;
-}
-
-@keyframes float {
-
-    0%,
-    100% {
-        transform: translateY(0) rotate(0deg);
-    }
-
-    50% {
-        transform: translateY(-15px) rotate(5deg);
-    }
-}
-
-@keyframes rainbow {
-    0% {
-        filter: hue-rotate(0deg);
-    }
-
-    100% {
-        filter: hue-rotate(360deg);
-    }
 }
 
 .empty-text h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.5rem;
+    font-family: 'Bangers', cursive;
+    font-size: 1.8rem;
+    color: #00d4c8;
     margin-bottom: 12px;
-    color: #00ffff;
     text-transform: uppercase;
 }
 
 .empty-text p {
-    color: #b366ff;
+    font-family: 'Russo One', sans-serif;
+    color: #808080;
     margin-bottom: 28px;
-    font-size: 1.05rem;
 }
 
-/* Workouts Grid */
-.workouts-grid {
-    margin-top: 8px;
-}
-
+/* Workout Cards */
 .workout-card {
     height: 100%;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    position: relative;
-    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
 .workout-card::before {
@@ -188,12 +132,12 @@
     left: 0;
     right: 0;
     height: 4px;
-    background: var(--card-accent, linear-gradient(90deg, #ff00ff, #00ffff));
+    background: linear-gradient(90deg, #00d4c8, #ff1493);
 }
 
 .workout-card:hover {
-    transform: translateY(-10px) scale(1.02);
-    box-shadow: 0 0 40px rgba(255, 0, 255, 0.3), 0 20px 50px rgba(0, 0, 0, 0.3) !important;
+    transform: translateY(-8px);
+    box-shadow: 0 0 30px rgba(0, 212, 200, 0.25) !important;
 }
 
 .workout-card .ant-card-body {
@@ -212,23 +156,18 @@
     align-items: center;
     gap: 8px;
     padding: 8px 16px;
-    border-radius: 25px;
-    font-size: 0.85rem;
-    font-weight: 700;
+    border-radius: 20px;
+    font-family: 'Russo One', sans-serif;
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    box-shadow: 0 0 15px currentColor;
-}
-
-.type-icon {
-    font-size: 16px;
 }
 
 .workout-actions {
     display: flex;
     gap: 4px;
     opacity: 0;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.2s ease;
 }
 
 .workout-card:hover .workout-actions {
@@ -236,15 +175,10 @@
 }
 
 .workout-title {
-    font-family: 'Orbitron', sans-serif;
+    font-family: 'Russo One', sans-serif;
     font-size: 1.15rem;
-    font-weight: 700;
     margin-bottom: 16px;
     color: white;
-    display: -webkit-box;
-    -webkit-line-clamp: 2;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
 }
 
 .workout-meta {
@@ -257,12 +191,13 @@
     display: flex;
     align-items: center;
     gap: 8px;
+    font-family: 'Russo One', sans-serif;
     font-size: 0.9rem;
-    color: #e0b3ff;
+    color: #c0c0c0;
 }
 
 .meta-item .anticon {
-    color: #00ffff;
+    color: #00d4c8;
 }
 
 .workout-footer {
@@ -270,47 +205,27 @@
     justify-content: space-between;
     align-items: center;
     padding-top: 16px;
-    border-top: 1px solid rgba(255, 0, 255, 0.2);
-}
-
-.workout-footer .ant-tag {
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.03em;
-    box-shadow: 0 0 10px currentColor;
+    border-top: 2px solid rgba(0, 212, 200, 0.2);
 }
 
 .workout-date {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+    font-family: 'Russo One', sans-serif;
     font-size: 0.85rem;
-    color: #b366ff;
+    color: #808080;
 }
 
 /* Modal */
 .workout-modal .ant-modal-content {
     padding: 32px !important;
-    background: linear-gradient(135deg, rgba(40, 0, 80, 0.95) 0%, rgba(10, 0, 30, 0.98) 100%) !important;
-    border: 2px solid #ff00ff !important;
-    border-radius: 20px !important;
-    box-shadow: 0 0 40px rgba(255, 0, 255, 0.3), 0 25px 80px rgba(0, 0, 0, 0.5) !important;
-}
-
-.workout-modal .ant-modal-header {
-    padding-bottom: 20px !important;
-    margin-bottom: 20px !important;
-    border-bottom: 1px solid rgba(255, 0, 255, 0.3) !important;
-    background: transparent !important;
+    background: linear-gradient(135deg, rgba(30, 25, 15, 0.98) 0%, rgba(15, 10, 5, 0.99) 100%) !important;
+    border: 3px solid #00d4c8 !important;
 }
 
 .workout-modal .ant-modal-title {
-    font-family: 'Orbitron', sans-serif !important;
-    font-size: 1.4rem !important;
-    font-weight: 700 !important;
-    color: #00ffff !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.05em !important;
+    font-family: 'Bangers', cursive !important;
+    font-size: 1.6rem !important;
+    color: #00d4c8 !important;
+    letter-spacing: 0.08em !important;
 }
 
 .modal-actions {
@@ -319,7 +234,14 @@
     gap: 16px;
     margin-top: 28px;
     padding-top: 20px;
-    border-top: 1px solid rgba(255, 0, 255, 0.2);
+    border-top: 2px solid rgba(0, 212, 200, 0.2);
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
 }
 
 /* Responsive */
@@ -338,6 +260,6 @@
     }
 
     .page-header h1 {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
     }
 }

@@ -1,12 +1,7 @@
-/* 🎨 FUNKY BMI CALCULATOR */
+/* 🏋️ STREET GYM BMI CALCULATOR */
 
 .bmi-page {
     animation: fadeIn 0.5s ease;
-}
-
-/* Calculator Card */
-.calculator-card {
-    height: 100%;
 }
 
 .calculator-header {
@@ -15,52 +10,29 @@
     gap: 16px;
     margin-bottom: 28px;
     padding-bottom: 20px;
-    border-bottom: 1px solid rgba(255, 0, 255, 0.2);
+    border-bottom: 2px solid rgba(0, 212, 200, 0.2);
 }
 
 .calc-icon {
-    font-size: 32px;
-    color: #ff00ff;
-    animation: glow 2s ease-in-out infinite alternate;
-}
-
-@keyframes glow {
-    from {
-        text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
-    }
-
-    to {
-        text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
-    }
+    font-size: 36px;
+    color: #00d4c8;
 }
 
 .calculator-header h3 {
-    font-family: 'Orbitron', sans-serif;
-    margin: 0;
-    font-size: 1.4rem;
-    color: #00ffff;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    font-family: 'Bangers', cursive;
+    font-size: 1.6rem;
+    color: #00d4c8;
+    letter-spacing: 0.08em;
+    text-shadow: 2px 2px 0 #ff1493;
 }
 
 /* Gender Selector */
-.gender-selector {
-    margin-bottom: 28px;
-}
-
 .field-label {
-    display: block;
-    margin-bottom: 12px;
-    color: #e0b3ff;
-    font-weight: 600;
+    font-family: 'Russo One', sans-serif;
+    color: #c0c0c0;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.08em;
     font-size: 0.85rem;
-}
-
-.gender-buttons {
-    width: 100%;
-    display: flex;
 }
 
 .gender-buttons .ant-radio-button-wrapper {
@@ -68,447 +40,249 @@
     text-align: center;
     height: 56px !important;
     line-height: 54px !important;
-    background: rgba(60, 0, 100, 0.4) !important;
-    border: 2px solid rgba(255, 0, 255, 0.3) !important;
-    color: #b366ff !important;
-    font-weight: 600;
+    background: rgba(0, 212, 200, 0.06) !important;
+    border: 2px solid rgba(0, 212, 200, 0.3) !important;
+    color: #808080 !important;
+    font-family: 'Russo One', sans-serif;
     font-size: 1rem;
 }
 
 .gender-buttons .ant-radio-button-wrapper:first-child {
-    border-radius: 14px 0 0 14px !important;
+    border-radius: 12px 0 0 12px !important;
 }
 
 .gender-buttons .ant-radio-button-wrapper:last-child {
-    border-radius: 0 14px 14px 0 !important;
+    border-radius: 0 12px 12px 0 !important;
 }
 
 .gender-buttons .ant-radio-button-wrapper-checked {
-    background: linear-gradient(135deg, rgba(255, 0, 255, 0.3), rgba(0, 255, 255, 0.2)) !important;
-    border-color: #00ffff !important;
-    color: #00ffff !important;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3) !important;
+    background: rgba(0, 212, 200, 0.15) !important;
+    border-color: #00d4c8 !important;
+    color: #00d4c8 !important;
 }
 
-/* Slider Input Group */
-.slider-input-group {
-    display: flex;
-    gap: 20px;
-    align-items: center;
-}
-
-.custom-slider {
-    flex: 1;
-}
-
+/* Slider */
 .custom-slider .ant-slider-rail {
     background: rgba(255, 255, 255, 0.1) !important;
-    height: 8px !important;
+    height: 10px !important;
     border-radius: 10px !important;
 }
 
 .custom-slider .ant-slider-track {
-    background: linear-gradient(90deg, #ff00ff, #00ffff) !important;
-    height: 8px !important;
+    background: linear-gradient(90deg, #00d4c8, #ff1493) !important;
+    height: 10px !important;
     border-radius: 10px !important;
-    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5) !important;
 }
 
 .custom-slider .ant-slider-handle {
-    width: 24px !important;
-    height: 24px !important;
-    border: 3px solid #00ffff !important;
-    background: linear-gradient(135deg, #ff00ff, #00ffff) !important;
-    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5) !important;
-}
-
-.slider-number-input {
-    width: 130px;
-}
-
-.slider-number-input .ant-input-number-group-addon {
-    background: rgba(60, 0, 100, 0.6) !important;
-    border-color: rgba(255, 0, 255, 0.3) !important;
-    color: #b366ff !important;
-    font-weight: 600;
+    width: 26px !important;
+    height: 26px !important;
+    background: #00d4c8 !important;
+    border: 3px solid white !important;
+    box-shadow: 0 0 15px rgba(0, 212, 200, 0.5) !important;
 }
 
 /* Calculate Button */
 .calculate-btn {
     height: 60px !important;
-    font-family: 'Orbitron', sans-serif !important;
-    font-size: 1.1rem !important;
-    font-weight: 700 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.1em !important;
-    background: linear-gradient(135deg, #ff00ff, #ff6b00) !important;
+    font-family: 'Bangers', cursive !important;
+    font-size: 1.4rem !important;
+    letter-spacing: 0.15em !important;
+    background: linear-gradient(135deg, #00d4c8 0%, #ff1493 100%) !important;
     border: none !important;
-    border-radius: 14px !important;
+    border-radius: 12px !important;
+    box-shadow: 0 5px 0 #008b7a;
     margin-top: 20px;
-    position: relative;
-    overflow: hidden;
-}
-
-.calculate-btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
-    transition: left 0.5s ease;
-}
-
-.calculate-btn:hover::before {
-    left: 100%;
 }
 
 .calculate-btn:hover {
-    box-shadow: 0 0 40px rgba(255, 0, 255, 0.5), 0 10px 30px rgba(0, 0, 0, 0.3) !important;
-    transform: translateY(-3px);
+    transform: translateY(-2px) !important;
+    box-shadow: 0 7px 0 #008b7a, 0 10px 25px rgba(0, 212, 200, 0.3) !important;
 }
 
-/* Results Card */
-.results-card {
-    height: 100%;
-    min-height: 550px;
-}
-
-.bmi-result-header {
-    text-align: center;
-    margin-bottom: 28px;
-}
-
+/* Results */
 .bmi-result-header h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.3rem;
-    margin: 0;
-    color: #00ffff;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-/* BMI Value Display */
-.bmi-value-display {
-    text-align: center;
-    margin-bottom: 36px;
+    font-family: 'Bangers', cursive;
+    font-size: 1.5rem;
+    color: #00d4c8;
+    letter-spacing: 0.08em;
 }
 
 .bmi-value {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 6rem;
-    font-weight: 800;
+    font-family: 'Bangers', cursive;
+    font-size: 7rem;
     line-height: 1;
     margin-bottom: 12px;
-    text-shadow: 0 0 40px currentColor;
-    animation: valueGlow 2s ease-in-out infinite alternate;
-}
-
-@keyframes valueGlow {
-    from {
-        filter: brightness(1);
-    }
-
-    to {
-        filter: brightness(1.2);
-    }
+    text-shadow: 4px 4px 0 #ff1493;
 }
 
 .bmi-category {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.5rem;
-    font-weight: 700;
+    font-family: 'Russo One', sans-serif;
+    font-size: 1.6rem;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
-    text-shadow: 0 0 20px currentColor;
+    letter-spacing: 0.2em;
 }
 
 /* BMI Scale */
-.bmi-scale {
-    position: relative;
-    margin-bottom: 36px;
-    padding-top: 20px;
-}
-
 .scale-bar {
     display: flex;
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.2);
 }
 
 .scale-section {
     flex: 1;
-    padding: 14px 8px;
+    padding: 16px 8px;
     text-align: center;
+    font-family: 'Russo One', sans-serif;
     font-size: 0.75rem;
     display: flex;
     flex-direction: column;
     gap: 4px;
-    font-weight: 600;
-}
-
-.scale-section span:first-child {
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.scale-section .range {
-    font-size: 0.7rem;
-    opacity: 0.8;
 }
 
 .scale-section.underweight {
-    background: rgba(0, 255, 255, 0.3);
-    color: #00ffff;
+    background: rgba(0, 212, 200, 0.4);
+    color: #00d4c8;
 }
 
 .scale-section.normal {
-    background: rgba(57, 255, 20, 0.3);
+    background: rgba(57, 255, 20, 0.4);
     color: #39ff14;
 }
 
 .scale-section.overweight {
-    background: rgba(255, 107, 0, 0.3);
-    color: #ff6b00;
+    background: rgba(240, 225, 48, 0.4);
+    color: #f0e130;
 }
 
 .scale-section.obese {
-    background: rgba(255, 0, 255, 0.3);
-    color: #ff00ff;
+    background: rgba(255, 20, 147, 0.4);
+    color: #ff1493;
 }
 
 .scale-indicator {
     position: absolute;
     top: 2px;
-    width: 24px;
-    height: 24px;
+    width: 28px;
+    height: 28px;
     border-radius: 50%;
     border: 3px solid white;
-    transform: translateX(-50%);
-    box-shadow: 0 0 20px currentColor, 0 4px 15px rgba(0, 0, 0, 0.4);
-    transition: left 0.5s ease;
-    animation: indicatorPulse 1.5s ease-in-out infinite;
+    box-shadow: 0 0 20px currentColor;
 }
 
-@keyframes indicatorPulse {
-
-    0%,
-    100% {
-        transform: translateX(-50%) scale(1);
-    }
-
-    50% {
-        transform: translateX(-50%) scale(1.15);
-    }
-}
-
-/* BMI Info */
-.bmi-info {
-    margin-bottom: 28px;
-}
-
+/* Info Section */
 .info-description {
-    text-align: center;
-    font-size: 1.05rem;
-    color: #e0b3ff;
-    margin-bottom: 28px;
-    padding: 20px;
-    background: rgba(60, 0, 100, 0.4);
-    border: 1px solid rgba(255, 0, 255, 0.2);
+    font-family: 'Russo One', sans-serif;
+    background: rgba(0, 212, 200, 0.08);
+    border: 2px solid rgba(0, 212, 200, 0.2);
     border-radius: 14px;
+    padding: 20px;
 }
 
 .healthy-range {
-    text-align: center;
-    padding: 20px;
-    background: linear-gradient(135deg, rgba(57, 255, 20, 0.15), rgba(0, 255, 255, 0.1));
-    border: 1px solid rgba(57, 255, 20, 0.3);
+    background: rgba(57, 255, 20, 0.1);
+    border: 2px solid rgba(57, 255, 20, 0.3);
     border-radius: 14px;
-    margin-bottom: 28px;
+    padding: 20px;
 }
 
 .healthy-range h4 {
-    font-size: 0.95rem;
-    color: #b366ff;
-    margin-bottom: 10px;
+    font-family: 'Russo One', sans-serif;
+    color: #808080;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
 }
 
 .healthy-range p {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.5rem;
+    font-family: 'Bangers', cursive;
+    font-size: 1.6rem;
     color: #39ff14;
-    margin: 0;
-    text-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
-}
-
-.tips-section h4 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1rem;
-    margin-bottom: 16px;
-    color: #00ffff;
-    text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
-.tips-section ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.tips-section h4 {
+    font-family: 'Bangers', cursive;
+    font-size: 1.2rem;
+    color: #00d4c8;
+    letter-spacing: 0.08em;
 }
 
 .tips-section li {
-    padding: 12px 0;
-    padding-left: 32px;
-    position: relative;
-    color: #e0b3ff;
-    font-size: 0.95rem;
-    border-bottom: 1px solid rgba(255, 0, 255, 0.1);
-}
-
-.tips-section li:last-child {
-    border-bottom: none;
+    font-family: 'Russo One', sans-serif;
+    color: #c0c0c0;
 }
 
 .tips-section li::before {
-    content: '✦';
-    position: absolute;
-    left: 0;
-    color: #ff00ff;
-    font-size: 1.1rem;
+    content: '💪';
+    margin-right: 10px;
 }
 
-.save-profile-btn {
-    margin-top: 20px;
-    height: 52px !important;
-    font-weight: 600 !important;
-    text-transform: uppercase !important;
-    letter-spacing: 0.05em !important;
-}
-
-/* No Result State */
-.no-result {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    min-height: 450px;
-    text-align: center;
-    padding: 40px;
-}
-
+/* No Result */
 .no-result-icon {
     font-size: 80px;
-    margin-bottom: 28px;
-    animation: float 3s ease-in-out infinite, rainbow 5s linear infinite;
+    animation: pump 1s ease-in-out infinite;
 }
 
-@keyframes float {
+@keyframes pump {
 
     0%,
     100% {
-        transform: translateY(0);
+        transform: scale(1);
     }
 
     50% {
-        transform: translateY(-15px);
-    }
-}
-
-@keyframes rainbow {
-    0% {
-        filter: hue-rotate(0deg);
-    }
-
-    100% {
-        filter: hue-rotate(360deg);
+        transform: scale(1.1);
     }
 }
 
 .no-result h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.75rem;
-    margin-bottom: 16px;
-    color: #00ffff;
-    text-transform: uppercase;
+    font-family: 'Bangers', cursive;
+    font-size: 2rem;
+    color: #00d4c8;
+    letter-spacing: 0.08em;
 }
 
 .no-result p {
-    color: #b366ff;
-    max-width: 320px;
-    font-size: 1.05rem;
-    line-height: 1.6;
+    font-family: 'Russo One', sans-serif;
+    color: #808080;
 }
 
-/* Info Row */
-.info-row {
-    margin-top: 28px;
-}
-
+/* Info Cards */
 .info-card {
     text-align: center;
     padding: 28px 20px !important;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
 .info-card:hover {
-    transform: translateY(-8px) scale(1.03);
-    box-shadow: 0 0 40px rgba(255, 0, 255, 0.25) !important;
+    transform: translateY(-8px);
 }
 
 .info-card-icon {
-    font-size: 36px;
+    font-size: 40px;
     margin-bottom: 16px;
-    animation: bounce 2s ease-in-out infinite;
-}
-
-@keyframes bounce {
-
-    0%,
-    100% {
-        transform: translateY(0);
-    }
-
-    50% {
-        transform: translateY(-8px);
-    }
 }
 
 .info-card h4 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.05rem;
-    margin-bottom: 6px;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    font-family: 'Bangers', cursive;
+    font-size: 1.1rem;
+    color: #00d4c8;
 }
 
 .info-card p {
+    font-family: 'Russo One', sans-serif;
+    color: #808080;
     font-size: 0.9rem;
-    color: #b366ff;
-    margin: 0;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
     .bmi-value {
-        font-size: 4rem;
+        font-size: 4.5rem;
     }
 
     .bmi-category {
-        font-size: 1.25rem;
-    }
-
-    .scale-section span:first-child {
-        font-size: 0.65rem;
-    }
-
-    .scale-section .range {
-        display: none;
+        font-size: 1.2rem;
     }
 }

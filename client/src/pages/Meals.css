@@ -1,4 +1,4 @@
-/* 🎨 FUNKY MEALS PAGE */
+/* 🏋️ STREET GYM MEALS */
 
 .meals-page {
     animation: fadeIn 0.5s ease;
@@ -14,8 +14,6 @@
 .nutrition-summary {
     margin-bottom: 28px;
     padding: 28px !important;
-    position: relative;
-    overflow: hidden;
 }
 
 .nutrition-summary::before {
@@ -24,120 +22,68 @@
     top: 0;
     left: 0;
     right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, #ff00ff, #00ffff, #39ff14, #ff6b00);
-}
-
-.nutrition-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 28px;
+    height: 5px;
+    background: linear-gradient(90deg, #00d4c8, #ff1493, #f0e130);
 }
 
 .nutrition-header h3 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1.2rem;
-    font-weight: 700;
-    margin: 0;
-    color: #00ffff;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    font-family: 'Bangers', cursive;
+    font-size: 1.4rem;
+    color: #00d4c8;
+    letter-spacing: 0.08em;
+    text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.2);
 }
 
 .date-label {
-    color: #b366ff;
+    font-family: 'Russo One', sans-serif;
+    color: #808080;
     font-size: 1rem;
-    font-weight: 500;
-}
-
-.nutrition-bars {
-    margin-top: 20px;
-}
-
-.nutrition-stat {
-    padding: 16px 0;
-}
-
-.nutrition-stat-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 12px;
 }
 
 .stat-label {
-    font-weight: 600;
-    color: #e0b3ff;
+    font-family: 'Russo One', sans-serif;
+    color: #c0c0c0;
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 0.05em;
 }
 
 .stat-value {
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    color: #00ffff;
-    font-size: 0.95rem;
-}
-
-/* Progress bar glow effect */
-.nutrition-stat .ant-progress-bg {
-    box-shadow: 0 0 15px currentColor !important;
+    font-family: 'Bangers', cursive;
+    color: #00d4c8;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
 }
 
 /* Meal Type Cards */
 .meal-type-card {
     height: 100%;
     min-height: 320px;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transition: all 0.3s ease;
 }
 
 .meal-type-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 0 40px rgba(255, 0, 255, 0.25) !important;
+    transform: translateY(-6px);
+    box-shadow: 0 0 30px rgba(0, 212, 200, 0.2) !important;
 }
 
 .meal-type-card .ant-card-head {
     padding: 20px 24px !important;
-    min-height: auto !important;
-    border-bottom: 1px solid rgba(255, 0, 255, 0.2) !important;
-}
-
-.meal-type-card .ant-card-head-title {
-    padding: 0 !important;
-}
-
-.meal-type-card .ant-card-body {
-    padding: 20px 24px !important;
+    border-bottom: 2px solid rgba(0, 212, 200, 0.2) !important;
 }
 
 .meal-type-header {
     display: flex;
     align-items: center;
     gap: 12px;
-    font-family: 'Orbitron', sans-serif;
-    font-weight: 700;
-    font-size: 1rem;
-    text-transform: uppercase;
+    font-family: 'Bangers', cursive;
+    font-size: 1.2rem;
+    color: #00d4c8;
     letter-spacing: 0.05em;
 }
 
 .meal-type-icon {
-    font-size: 24px;
-    animation: pulse 2s ease-in-out infinite;
-}
-
-@keyframes pulse {
-
-    0%,
-    100% {
-        transform: scale(1);
-    }
-
-    50% {
-        transform: scale(1.15);
-    }
+    font-size: 28px;
 }
 
 .no-meals {
@@ -146,22 +92,15 @@
 }
 
 .no-meals p {
-    color: #b366ff;
+    font-family: 'Russo One', sans-serif;
+    color: #808080;
     margin-bottom: 20px;
-    font-size: 0.95rem;
 }
 
 .no-meals .ant-btn-dashed {
-    border-color: rgba(0, 255, 255, 0.5) !important;
-    color: #00ffff !important;
-    border-style: dashed !important;
-    font-weight: 600;
-}
-
-.no-meals .ant-btn-dashed:hover {
-    border-color: #00ffff !important;
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3) !important;
-    background: rgba(0, 255, 255, 0.1) !important;
+    border-color: rgba(0, 212, 200, 0.5) !important;
+    color: #00d4c8 !important;
+    font-family: 'Russo One', sans-serif;
 }
 
 /* Meal Items */
@@ -173,32 +112,20 @@
 
 .meal-item {
     padding: 16px;
-    background: rgba(60, 0, 100, 0.4);
-    border: 1px solid rgba(255, 0, 255, 0.2);
-    border-radius: 14px;
+    background: rgba(0, 212, 200, 0.06);
+    border: 2px solid rgba(0, 212, 200, 0.2);
+    border-radius: 12px;
     transition: all 0.3s ease;
 }
 
 .meal-item:hover {
-    border-color: #00ffff;
-    background: rgba(0, 255, 255, 0.1);
+    border-color: #00d4c8;
     transform: translateX(5px);
-    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
-}
-
-.meal-item-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    margin-bottom: 10px;
 }
 
 .meal-item-header h4 {
+    font-family: 'Russo One', sans-serif;
     font-size: 1rem;
-    font-weight: 700;
-    margin: 0;
-    flex: 1;
-    word-break: break-word;
     color: white;
 }
 
@@ -217,38 +144,26 @@
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
+    font-family: 'Russo One', sans-serif;
     font-size: 0.8rem;
-    color: #b366ff;
+    color: #808080;
 }
 
 .meal-item-nutrition span {
     padding: 4px 10px;
-    background: rgba(255, 0, 255, 0.15);
+    background: rgba(0, 212, 200, 0.1);
     border-radius: 8px;
-    font-weight: 600;
 }
 
 /* Modal */
 .meal-modal .ant-modal-content {
-    padding: 32px !important;
-    background: linear-gradient(135deg, rgba(40, 0, 80, 0.95) 0%, rgba(10, 0, 30, 0.98) 100%) !important;
-    border: 2px solid #00ffff !important;
-    box-shadow: 0 0 40px rgba(0, 255, 255, 0.3), 0 25px 80px rgba(0, 0, 0, 0.5) !important;
-}
-
-.nutrition-inputs-header {
-    margin-bottom: 16px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid rgba(255, 0, 255, 0.2);
+    border: 3px solid #ff1493 !important;
 }
 
 .nutrition-inputs-header h4 {
-    font-family: 'Orbitron', sans-serif;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #00ffff;
-    margin: 0;
-    text-transform: uppercase;
+    font-family: 'Bangers', cursive;
+    font-size: 1.1rem;
+    color: #00d4c8;
     letter-spacing: 0.05em;
 }
 
@@ -257,11 +172,6 @@
     .header-actions {
         width: 100%;
         flex-direction: column;
-    }
-
-    .header-actions .ant-picker,
-    .header-actions .add-btn {
-        width: 100%;
     }
 
     .meal-item-actions {

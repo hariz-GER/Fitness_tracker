@@ -14,6 +14,7 @@ import BMICalculator from './pages/BMICalculator';
 import Progress from './pages/Progress';
 import Reminders from './pages/Reminders';
 import Profile from './pages/Profile';
+import Devices from './pages/Devices';
 
 import './index.css';
 
@@ -74,6 +75,7 @@ const App = () => {
               <Route path="bmi" element={<BMICalculator />} />
               <Route path="progress" element={<Progress />} />
               <Route path="reminders" element={<Reminders />} />
+              <Route path="devices" element={<Devices />} />
               <Route path="profile" element={<Profile />} />
               <Route path="settings" element={<Profile />} />
             </Route>

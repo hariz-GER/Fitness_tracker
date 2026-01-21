@@ -1,0 +1,408 @@
+/* 🏋️ STREET GYM - DEVICES PAGE */
+
+.devices-page {
+    animation: fadeIn 0.5s ease;
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+/* Connect Card */
+.connect-card {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 60px 40px !important;
+}
+
+.connect-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.connect-icon {
+    font-size: 80px;
+    margin-bottom: 24px;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+.connect-content h2 {
+    font-family: 'Bangers', cursive;
+    font-size: 2.5rem;
+    color: #00d4c8;
+    margin-bottom: 16px;
+    text-shadow: 3px 3px 0 #ff1493;
+}
+
+.connect-content>p {
+    font-family: 'Russo One', sans-serif;
+    color: #808080;
+    font-size: 1.1rem;
+    max-width: 500px;
+    margin-bottom: 32px;
+}
+
+.supported-devices {
+    margin-bottom: 32px;
+}
+
+.supported-devices h4 {
+    font-family: 'Russo One', sans-serif;
+    color: #c0c0c0;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.device-logos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-bottom: 12px;
+}
+
+.device-logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 16px;
+    background: rgba(0, 212, 200, 0.08);
+    border: 2px solid rgba(0, 212, 200, 0.2);
+    border-radius: 14px;
+    min-width: 80px;
+    transition: all 0.3s ease;
+}
+
+.device-logo:hover {
+    border-color: #00d4c8;
+    transform: translateY(-4px);
+    box-shadow: 0 0 20px rgba(0, 212, 200, 0.2);
+}
+
+.device-logo span {
+    font-size: 24px;
+}
+
+.device-logo small {
+    font-family: 'Russo One', sans-serif;
+    font-size: 0.7rem;
+    color: #808080;
+}
+
+.more-devices {
+    font-family: 'Russo One', sans-serif;
+    color: #00d4c8;
+    font-size: 0.9rem;
+}
+
+.connect-btn {
+    height: 60px !important;
+    padding: 0 48px !important;
+    font-family: 'Bangers', cursive !important;
+    font-size: 1.4rem !important;
+    letter-spacing: 0.1em !important;
+    background: linear-gradient(135deg, #00d4c8 0%, #ff1493 100%) !important;
+    border: none !important;
+    border-radius: 14px !important;
+    box-shadow: 0 5px 0 #008b7a;
+}
+
+.connect-btn:hover {
+    transform: translateY(-3px) !important;
+    box-shadow: 0 8px 0 #008b7a, 0 12px 30px rgba(0, 212, 200, 0.3) !important;
+}
+
+/* Sync Button */
+.sync-btn {
+    height: 52px !important;
+    font-family: 'Bangers', cursive !important;
+    font-size: 1.2rem !important;
+    letter-spacing: 0.08em !important;
+}
+
+/* Device Card */
+.device-card {
+    height: 100%;
+}
+
+.device-header {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 2px solid rgba(0, 212, 200, 0.2);
+}
+
+.device-icon-large {
+    font-size: 50px;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, rgba(0, 212, 200, 0.2), rgba(255, 20, 147, 0.1));
+    border: 2px solid rgba(0, 212, 200, 0.3);
+    border-radius: 20px;
+}
+
+.device-info h3 {
+    font-family: 'Bangers', cursive;
+    font-size: 1.5rem;
+    color: #00d4c8;
+    margin-bottom: 8px;
+}
+
+.device-settings {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.setting-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 16px;
+    background: rgba(0, 212, 200, 0.06);
+    border-radius: 10px;
+}
+
+.setting-item span:first-child {
+    font-family: 'Russo One', sans-serif;
+    color: #c0c0c0;
+}
+
+.setting-value {
+    font-family: 'Russo One', sans-serif;
+    color: #00d4c8;
+}
+
+.disconnect-btn {
+    font-family: 'Russo One', sans-serif !important;
+    text-transform: uppercase;
+}
+
+/* Stats Card */
+.stats-card {
+    height: 100%;
+}
+
+.stats-card .ant-card-head-title {
+    font-family: 'Bangers', cursive !important;
+    font-size: 1.3rem;
+    color: #00d4c8;
+}
+
+.stat-item .ant-statistic-title {
+    font-family: 'Russo One', sans-serif;
+    color: #808080;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.stat-item .ant-statistic-content-value {
+    font-family: 'Bangers', cursive;
+    color: #00d4c8;
+    font-size: 2rem;
+}
+
+.stat-item.heart-rate .ant-statistic-content-value {
+    color: #ff1493;
+}
+
+/* Sleep Card */
+.sleep-card .ant-card-head-title {
+    font-family: 'Bangers', cursive !important;
+    font-size: 1.3rem;
+    color: #00d4c8;
+}
+
+.sleep-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.sleep-main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 24px;
+    background: linear-gradient(135deg, rgba(0, 212, 200, 0.1), rgba(139, 92, 246, 0.1));
+    border-radius: 16px;
+}
+
+.sleep-hours {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.sleep-hours .anticon {
+    font-size: 24px;
+    color: #8b5cf6;
+}
+
+.hours-value {
+    font-family: 'Bangers', cursive;
+    font-size: 4rem;
+    color: #8b5cf6;
+    line-height: 1;
+}
+
+.hours-label {
+    font-family: 'Russo One', sans-serif;
+    color: #808080;
+    text-transform: uppercase;
+}
+
+.sleep-quality {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.quality-label {
+    font-family: 'Russo One', sans-serif;
+    color: #808080;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.quality-value {
+    font-family: 'Bangers', cursive;
+    font-size: 3rem;
+    color: #00d4c8;
+}
+
+.sleep-breakdown {
+    display: flex;
+    justify-content: space-around;
+}
+
+.sleep-stage {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'Russo One', sans-serif;
+    color: #c0c0c0;
+    font-size: 0.9rem;
+}
+
+.stage-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.stage-dot.deep {
+    background: #3b82f6;
+}
+
+.stage-dot.light {
+    background: #22c55e;
+}
+
+.stage-dot.rem {
+    background: #f97316;
+}
+
+/* Sync History */
+.sync-history-card .ant-card-head-title {
+    font-family: 'Bangers', cursive !important;
+    font-size: 1.3rem;
+    color: #00d4c8;
+}
+
+.sync-item {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.sync-time {
+    font-family: 'Russo One', sans-serif;
+    color: #c0c0c0;
+    font-size: 0.9rem;
+}
+
+.sync-count {
+    font-family: 'Russo One', sans-serif;
+    color: #00d4c8;
+    font-size: 0.85rem;
+}
+
+/* Alert */
+.ant-alert {
+    background: rgba(0, 212, 200, 0.08) !important;
+    border: 2px solid rgba(0, 212, 200, 0.3) !important;
+    border-radius: 14px !important;
+}
+
+.ant-alert-message {
+    font-family: 'Bangers', cursive !important;
+    color: #00d4c8 !important;
+}
+
+.ant-alert-description {
+    font-family: 'Russo One', sans-serif !important;
+    color: #c0c0c0 !important;
+}
+
+/* Header Actions */
+.header-actions {
+    display: flex;
+    gap: 12px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .connect-card {
+        padding: 40px 20px !important;
+    }
+
+    .connect-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .device-logos {
+        gap: 10px;
+    }
+
+    .device-logo {
+        padding: 12px;
+        min-width: 70px;
+    }
+
+    .sleep-main {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .hours-value {
+        font-size: 3rem;
+    }
+}

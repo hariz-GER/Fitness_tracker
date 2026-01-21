@@ -32,12 +32,14 @@ if (DEMO_MODE) {
     const demoMealRoutes = require('./routes/demo/meals');
     const demoProgressRoutes = require('./routes/demo/progress');
     const demoReminderRoutes = require('./routes/demo/reminders');
+    const demoDeviceRoutes = require('./routes/demo/devices');
 
     app.use('/api/auth', demoAuthRoutes);
     app.use('/api/workouts', demoWorkoutRoutes);
     app.use('/api/meals', demoMealRoutes);
     app.use('/api/progress', demoProgressRoutes);
     app.use('/api/reminders', demoReminderRoutes);
+    app.use('/api/devices', demoDeviceRoutes);
 } else {
     // Connect to MongoDB
     const connectDB = require('./config/db');

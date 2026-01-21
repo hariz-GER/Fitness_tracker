@@ -56,6 +56,11 @@ const AppLayout = () => {
             icon: <BellOutlined />,
             label: <Link to="/reminders">Reminders</Link>,
         },
+        {
+            key: '/devices',
+            icon: <SettingOutlined />,
+            label: <Link to="/devices">Devices</Link>,
+        },
     ];
 
     const userMenuItems = [

@@ -1,0 +1,355 @@
+/* BMI Calculator Page Styles */
+
+.bmi-page {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Calculator Card */
+.calculator-card {
+    height: 100%;
+}
+
+.calculator-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.calc-icon {
+    font-size: 24px;
+    color: var(--primary-500);
+}
+
+.calculator-header h3 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+/* Gender Selector */
+.gender-selector {
+    margin-bottom: 24px;
+}
+
+.field-label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.gender-buttons {
+    width: 100%;
+    display: flex;
+}
+
+.gender-buttons .ant-radio-button-wrapper {
+    flex: 1;
+    text-align: center;
+    height: 48px !important;
+    line-height: 46px !important;
+    background: var(--bg-glass) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-secondary) !important;
+}
+
+.gender-buttons .ant-radio-button-wrapper:first-child {
+    border-radius: var(--radius-md) 0 0 var(--radius-md) !important;
+}
+
+.gender-buttons .ant-radio-button-wrapper:last-child {
+    border-radius: 0 var(--radius-md) var(--radius-md) 0 !important;
+}
+
+.gender-buttons .ant-radio-button-wrapper-checked {
+    background: rgba(59, 130, 246, 0.15) !important;
+    border-color: var(--primary-500) !important;
+    color: var(--primary-400) !important;
+}
+
+/* Slider Input Group */
+.slider-input-group {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.custom-slider {
+    flex: 1;
+}
+
+.custom-slider .ant-slider-rail {
+    background: var(--bg-tertiary) !important;
+}
+
+.custom-slider .ant-slider-track {
+    background: var(--gradient-primary) !important;
+}
+
+.custom-slider .ant-slider-handle {
+    border-color: var(--primary-500) !important;
+    background: var(--primary-500) !important;
+}
+
+.slider-number-input {
+    width: 120px;
+}
+
+.slider-number-input .ant-input-number-group-addon {
+    background: var(--bg-tertiary) !important;
+    border-color: var(--border-color) !important;
+    color: var(--text-tertiary) !important;
+}
+
+/* Calculate Button */
+.calculate-btn {
+    height: 50px !important;
+    font-size: 1rem !important;
+    font-weight: 600 !important;
+    margin-top: 16px;
+}
+
+/* Results Card */
+.results-card {
+    height: 100%;
+    min-height: 500px;
+}
+
+.bmi-result-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.bmi-result-header h3 {
+    font-size: 1.25rem;
+    margin: 0;
+}
+
+/* BMI Value Display */
+.bmi-value-display {
+    text-align: center;
+    margin-bottom: 32px;
+}
+
+.bmi-value {
+    font-size: 5rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 8px;
+}
+
+.bmi-category {
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* BMI Scale */
+.bmi-scale {
+    position: relative;
+    margin-bottom: 32px;
+    padding-top: 16px;
+}
+
+.scale-bar {
+    display: flex;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+.scale-section {
+    flex: 1;
+    padding: 12px 8px;
+    text-align: center;
+    font-size: 0.75rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.scale-section span:first-child {
+    font-weight: 600;
+}
+
+.scale-section .range {
+    font-size: 0.65rem;
+    opacity: 0.8;
+}
+
+.scale-section.underweight {
+    background: rgba(234, 179, 8, 0.3);
+    color: #eab308;
+}
+
+.scale-section.normal {
+    background: rgba(34, 197, 94, 0.3);
+    color: #22c55e;
+}
+
+.scale-section.overweight {
+    background: rgba(249, 115, 22, 0.3);
+    color: #f97316;
+}
+
+.scale-section.obese {
+    background: rgba(239, 68, 68, 0.3);
+    color: #ef4444;
+}
+
+.scale-indicator {
+    position: absolute;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 3px solid var(--bg-primary);
+    transform: translateX(-50%);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    transition: left 0.5s ease;
+}
+
+/* BMI Info */
+.bmi-info {
+    margin-bottom: 24px;
+}
+
+.info-description {
+    text-align: center;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    margin-bottom: 24px;
+    padding: 16px;
+    background: var(--bg-glass);
+    border-radius: var(--radius-md);
+}
+
+.healthy-range {
+    text-align: center;
+    padding: 16px;
+    background: rgba(34, 197, 94, 0.1);
+    border: 1px solid rgba(34, 197, 94, 0.2);
+    border-radius: var(--radius-md);
+    margin-bottom: 24px;
+}
+
+.healthy-range h4 {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    margin-bottom: 8px;
+}
+
+.healthy-range p {
+    font-size: 1.25rem;
+    color: #22c55e;
+    margin: 0;
+}
+
+.tips-section h4 {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+}
+
+.tips-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.tips-section li {
+    padding: 8px 0;
+    padding-left: 24px;
+    position: relative;
+    color: var(--text-secondary);
+}
+
+.tips-section li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--primary-500);
+}
+
+.save-profile-btn {
+    margin-top: 16px;
+    height: 44px !important;
+}
+
+/* No Result State */
+.no-result {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    min-height: 400px;
+    text-align: center;
+    padding: 40px;
+}
+
+.no-result-icon {
+    font-size: 64px;
+    margin-bottom: 24px;
+}
+
+.no-result h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+}
+
+.no-result p {
+    color: var(--text-tertiary);
+    max-width: 300px;
+}
+
+/* Info Row */
+.info-row {
+    margin-top: 24px;
+}
+
+.info-card {
+    text-align: center;
+    padding: 24px 16px !important;
+    transition: transform 0.3s ease;
+}
+
+.info-card:hover {
+    transform: translateY(-4px);
+}
+
+.info-card-icon {
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.info-card h4 {
+    font-size: 1rem;
+    margin-bottom: 4px;
+}
+
+.info-card p {
+    font-size: 0.85rem;
+    color: var(--text-tertiary);
+    margin: 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .bmi-value {
+        font-size: 3.5rem;
+    }
+
+    .bmi-category {
+        font-size: 1.25rem;
+    }
+
+    .scale-section span:first-child {
+        font-size: 0.65rem;
+    }
+
+    .scale-section .range {
+        display: none;
+    }
+}

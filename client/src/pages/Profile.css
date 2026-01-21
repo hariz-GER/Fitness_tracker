@@ -1,0 +1,123 @@
+/* Profile Page Styles */
+
+.profile-page {
+    animation: fadeIn 0.5s ease;
+}
+
+/* Profile Card */
+.profile-card {
+    text-align: center;
+}
+
+.profile-avatar-section {
+    padding: 24px 0;
+    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 24px;
+}
+
+.profile-avatar {
+    margin-bottom: 16px;
+    background: var(--gradient-primary);
+    border: 4px solid var(--border-color);
+    box-shadow: 0 8px 32px rgba(59, 130, 246, 0.2);
+}
+
+.profile-avatar-section h2 {
+    font-size: 1.5rem;
+    margin-bottom: 4px;
+}
+
+.profile-avatar-section p {
+    color: var(--text-tertiary);
+    font-size: 0.9rem;
+    margin-bottom: 16px;
+}
+
+/* Profile Stats */
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 16px 0;
+    margin-bottom: 16px;
+}
+
+.profile-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.profile-stat .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-primary);
+}
+
+.profile-stat .stat-label {
+    font-size: 0.75rem;
+    color: var(--text-tertiary);
+}
+
+/* Profile Goal */
+.profile-goal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 12px;
+    background: rgba(59, 130, 246, 0.1);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    border-radius: var(--radius-md);
+}
+
+.goal-icon {
+    font-size: 20px;
+}
+
+.goal-text {
+    font-weight: 600;
+    color: var(--primary-400);
+}
+
+/* Settings Card */
+.settings-card {
+    height: 100%;
+}
+
+.settings-card .ant-card-body {
+    padding: 24px !important;
+}
+
+.settings-card .ant-tabs-nav {
+    margin-bottom: 24px !important;
+}
+
+.settings-card .ant-divider {
+    margin: 24px 0 16px !important;
+    border-color: var(--border-color) !important;
+}
+
+.settings-card .ant-divider-inner-text {
+    color: var(--text-tertiary) !important;
+    font-size: 0.85rem !important;
+}
+
+.form-actions {
+    margin-top: 24px;
+    padding-top: 24px;
+    border-top: 1px solid var(--border-color);
+    display: flex;
+    justify-content: flex-end;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .profile-stats {
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .profile-stat {
+        min-width: 80px;
+    }
+}

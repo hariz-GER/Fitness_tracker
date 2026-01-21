@@ -10,10 +10,14 @@ const app = express();
 // Body parser
 app.use(express.json());
 
-// Enable CORS
+// Enable CORS - Allow all origins in development
 app.use(cors({
-    origin: ['http://localhost:5173', 'http://localhost:3000'],
-    credentials: true
+    origin: true, // Allow all origins
+    credentials: true,
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH', 'OPTIONS'],
+    allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With'],
+    preflightContinue: false,
+    optionsSuccessStatus: 204
 }));
 
 // Demo Mode flag - set to true to use in-memory storage instead of MongoDB

@@ -1,4 +1,4 @@
-/* Meals Page Styles */
+/* 🎨 FUNKY MEALS PAGE */
 
 .meals-page {
     animation: fadeIn 0.5s ease;
@@ -6,71 +6,102 @@
 
 .header-actions {
     display: flex;
-    gap: 12px;
+    gap: 16px;
     flex-wrap: wrap;
 }
 
 /* Nutrition Summary */
 .nutrition-summary {
-    margin-bottom: 24px;
-    padding: 24px !important;
+    margin-bottom: 28px;
+    padding: 28px !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.nutrition-summary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #ff00ff, #00ffff, #39ff14, #ff6b00);
 }
 
 .nutrition-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 }
 
 .nutrition-header h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 700;
     margin: 0;
+    color: #00ffff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .date-label {
-    color: var(--text-tertiary);
-    font-size: 0.9rem;
+    color: #b366ff;
+    font-size: 1rem;
+    font-weight: 500;
 }
 
 .nutrition-bars {
-    margin-top: 16px;
+    margin-top: 20px;
 }
 
 .nutrition-stat {
-    padding: 12px 0;
+    padding: 16px 0;
 }
 
 .nutrition-stat-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
 }
 
 .stat-label {
-    font-weight: 500;
-    color: var(--text-secondary);
+    font-weight: 600;
+    color: #e0b3ff;
     font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .stat-value {
-    font-weight: 600;
-    color: var(--text-primary);
-    font-size: 0.85rem;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    color: #00ffff;
+    font-size: 0.95rem;
+}
+
+/* Progress bar glow effect */
+.nutrition-stat .ant-progress-bg {
+    box-shadow: 0 0 15px currentColor !important;
 }
 
 /* Meal Type Cards */
 .meal-type-card {
     height: 100%;
-    min-height: 280px;
+    min-height: 320px;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.meal-type-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 0 40px rgba(255, 0, 255, 0.25) !important;
 }
 
 .meal-type-card .ant-card-head {
-    padding: 16px 20px !important;
+    padding: 20px 24px !important;
     min-height: auto !important;
-    border-bottom: 1px solid var(--border-color) !important;
+    border-bottom: 1px solid rgba(255, 0, 255, 0.2) !important;
 }
 
 .meal-type-card .ant-card-head-title {
@@ -78,62 +109,97 @@
 }
 
 .meal-type-card .ant-card-body {
-    padding: 16px 20px !important;
+    padding: 20px 24px !important;
 }
 
 .meal-type-header {
     display: flex;
     align-items: center;
-    gap: 10px;
-    font-weight: 600;
+    gap: 12px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .meal-type-icon {
-    font-size: 20px;
+    font-size: 24px;
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.15);
+    }
 }
 
 .no-meals {
     text-align: center;
-    padding: 20px 0;
+    padding: 28px 0;
 }
 
 .no-meals p {
-    color: var(--text-tertiary);
-    margin-bottom: 16px;
+    color: #b366ff;
+    margin-bottom: 20px;
+    font-size: 0.95rem;
+}
+
+.no-meals .ant-btn-dashed {
+    border-color: rgba(0, 255, 255, 0.5) !important;
+    color: #00ffff !important;
+    border-style: dashed !important;
+    font-weight: 600;
+}
+
+.no-meals .ant-btn-dashed:hover {
+    border-color: #00ffff !important;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3) !important;
+    background: rgba(0, 255, 255, 0.1) !important;
 }
 
 /* Meal Items */
 .meal-items {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 14px;
 }
 
 .meal-item {
-    padding: 12px;
-    background: var(--bg-glass);
-    border: 1px solid var(--border-color);
-    border-radius: var(--radius-md);
-    transition: all 0.2s ease;
+    padding: 16px;
+    background: rgba(60, 0, 100, 0.4);
+    border: 1px solid rgba(255, 0, 255, 0.2);
+    border-radius: 14px;
+    transition: all 0.3s ease;
 }
 
 .meal-item:hover {
-    border-color: var(--border-light);
+    border-color: #00ffff;
+    background: rgba(0, 255, 255, 0.1);
+    transform: translateX(5px);
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.2);
 }
 
 .meal-item-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .meal-item-header h4 {
-    font-size: 0.95rem;
-    font-weight: 600;
+    font-size: 1rem;
+    font-weight: 700;
     margin: 0;
     flex: 1;
     word-break: break-word;
+    color: white;
 }
 
 .meal-item-actions {
@@ -150,33 +216,40 @@
 .meal-item-nutrition {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
-    font-size: 0.75rem;
-    color: var(--text-tertiary);
+    gap: 10px;
+    font-size: 0.8rem;
+    color: #b366ff;
 }
 
 .meal-item-nutrition span {
-    padding: 2px 6px;
-    background: rgba(255, 255, 255, 0.05);
-    border-radius: 4px;
+    padding: 4px 10px;
+    background: rgba(255, 0, 255, 0.15);
+    border-radius: 8px;
+    font-weight: 600;
 }
 
 /* Modal */
 .meal-modal .ant-modal-content {
-    padding: 24px !important;
+    padding: 32px !important;
+    background: linear-gradient(135deg, rgba(40, 0, 80, 0.95) 0%, rgba(10, 0, 30, 0.98) 100%) !important;
+    border: 2px solid #00ffff !important;
+    box-shadow: 0 0 40px rgba(0, 255, 255, 0.3), 0 25px 80px rgba(0, 0, 0, 0.5) !important;
 }
 
 .nutrition-inputs-header {
-    margin-bottom: 12px;
-    padding-bottom: 12px;
-    border-bottom: 1px solid var(--border-color);
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 0, 255, 0.2);
 }
 
 .nutrition-inputs-header h4 {
-    font-size: 0.95rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
     font-weight: 600;
-    color: var(--text-secondary);
+    color: #00ffff;
     margin: 0;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 /* Responsive */

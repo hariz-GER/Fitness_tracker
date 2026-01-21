@@ -1,4 +1,4 @@
-/* BMI Calculator Page Styles */
+/* 🎨 FUNKY BMI CALCULATOR */
 
 .bmi-page {
     animation: fadeIn 0.5s ease;
@@ -12,32 +12,50 @@
 .calculator-header {
     display: flex;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 24px;
-    padding-bottom: 16px;
-    border-bottom: 1px solid var(--border-color);
+    gap: 16px;
+    margin-bottom: 28px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 0, 255, 0.2);
 }
 
 .calc-icon {
-    font-size: 24px;
-    color: var(--primary-500);
+    font-size: 32px;
+    color: #ff00ff;
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+    }
+
+    to {
+        text-shadow: 0 0 20px #00ffff, 0 0 40px #00ffff;
+    }
 }
 
 .calculator-header h3 {
+    font-family: 'Orbitron', sans-serif;
     margin: 0;
-    font-size: 1.25rem;
+    font-size: 1.4rem;
+    color: #00ffff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 /* Gender Selector */
 .gender-selector {
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 }
 
 .field-label {
     display: block;
-    margin-bottom: 8px;
-    color: var(--text-secondary);
-    font-weight: 500;
+    margin-bottom: 12px;
+    color: #e0b3ff;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-size: 0.85rem;
 }
 
 .gender-buttons {
@@ -48,31 +66,34 @@
 .gender-buttons .ant-radio-button-wrapper {
     flex: 1;
     text-align: center;
-    height: 48px !important;
-    line-height: 46px !important;
-    background: var(--bg-glass) !important;
-    border-color: var(--border-color) !important;
-    color: var(--text-secondary) !important;
+    height: 56px !important;
+    line-height: 54px !important;
+    background: rgba(60, 0, 100, 0.4) !important;
+    border: 2px solid rgba(255, 0, 255, 0.3) !important;
+    color: #b366ff !important;
+    font-weight: 600;
+    font-size: 1rem;
 }
 
 .gender-buttons .ant-radio-button-wrapper:first-child {
-    border-radius: var(--radius-md) 0 0 var(--radius-md) !important;
+    border-radius: 14px 0 0 14px !important;
 }
 
 .gender-buttons .ant-radio-button-wrapper:last-child {
-    border-radius: 0 var(--radius-md) var(--radius-md) 0 !important;
+    border-radius: 0 14px 14px 0 !important;
 }
 
 .gender-buttons .ant-radio-button-wrapper-checked {
-    background: rgba(59, 130, 246, 0.15) !important;
-    border-color: var(--primary-500) !important;
-    color: var(--primary-400) !important;
+    background: linear-gradient(135deg, rgba(255, 0, 255, 0.3), rgba(0, 255, 255, 0.2)) !important;
+    border-color: #00ffff !important;
+    color: #00ffff !important;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.3) !important;
 }
 
 /* Slider Input Group */
 .slider-input-group {
     display: flex;
-    gap: 16px;
+    gap: 20px;
     align-items: center;
 }
 
@@ -81,175 +102,257 @@
 }
 
 .custom-slider .ant-slider-rail {
-    background: var(--bg-tertiary) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    height: 8px !important;
+    border-radius: 10px !important;
 }
 
 .custom-slider .ant-slider-track {
-    background: var(--gradient-primary) !important;
+    background: linear-gradient(90deg, #ff00ff, #00ffff) !important;
+    height: 8px !important;
+    border-radius: 10px !important;
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5) !important;
 }
 
 .custom-slider .ant-slider-handle {
-    border-color: var(--primary-500) !important;
-    background: var(--primary-500) !important;
+    width: 24px !important;
+    height: 24px !important;
+    border: 3px solid #00ffff !important;
+    background: linear-gradient(135deg, #ff00ff, #00ffff) !important;
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.5) !important;
 }
 
 .slider-number-input {
-    width: 120px;
+    width: 130px;
 }
 
 .slider-number-input .ant-input-number-group-addon {
-    background: var(--bg-tertiary) !important;
-    border-color: var(--border-color) !important;
-    color: var(--text-tertiary) !important;
+    background: rgba(60, 0, 100, 0.6) !important;
+    border-color: rgba(255, 0, 255, 0.3) !important;
+    color: #b366ff !important;
+    font-weight: 600;
 }
 
 /* Calculate Button */
 .calculate-btn {
-    height: 50px !important;
-    font-size: 1rem !important;
-    font-weight: 600 !important;
-    margin-top: 16px;
+    height: 60px !important;
+    font-family: 'Orbitron', sans-serif !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.1em !important;
+    background: linear-gradient(135deg, #ff00ff, #ff6b00) !important;
+    border: none !important;
+    border-radius: 14px !important;
+    margin-top: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.calculate-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.calculate-btn:hover::before {
+    left: 100%;
+}
+
+.calculate-btn:hover {
+    box-shadow: 0 0 40px rgba(255, 0, 255, 0.5), 0 10px 30px rgba(0, 0, 0, 0.3) !important;
+    transform: translateY(-3px);
 }
 
 /* Results Card */
 .results-card {
     height: 100%;
-    min-height: 500px;
+    min-height: 550px;
 }
 
 .bmi-result-header {
     text-align: center;
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 }
 
 .bmi-result-header h3 {
-    font-size: 1.25rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.3rem;
     margin: 0;
+    color: #00ffff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 /* BMI Value Display */
 .bmi-value-display {
     text-align: center;
-    margin-bottom: 32px;
+    margin-bottom: 36px;
 }
 
 .bmi-value {
-    font-size: 5rem;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 6rem;
     font-weight: 800;
     line-height: 1;
-    margin-bottom: 8px;
+    margin-bottom: 12px;
+    text-shadow: 0 0 40px currentColor;
+    animation: valueGlow 2s ease-in-out infinite alternate;
+}
+
+@keyframes valueGlow {
+    from {
+        filter: brightness(1);
+    }
+
+    to {
+        filter: brightness(1.2);
+    }
 }
 
 .bmi-category {
+    font-family: 'Orbitron', sans-serif;
     font-size: 1.5rem;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 0.15em;
+    text-shadow: 0 0 20px currentColor;
 }
 
 /* BMI Scale */
 .bmi-scale {
     position: relative;
-    margin-bottom: 32px;
-    padding-top: 16px;
+    margin-bottom: 36px;
+    padding-top: 20px;
 }
 
 .scale-bar {
     display: flex;
-    border-radius: var(--radius-md);
+    border-radius: 12px;
     overflow: hidden;
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.2);
 }
 
 .scale-section {
     flex: 1;
-    padding: 12px 8px;
+    padding: 14px 8px;
     text-align: center;
     font-size: 0.75rem;
     display: flex;
     flex-direction: column;
-    gap: 2px;
-}
-
-.scale-section span:first-child {
+    gap: 4px;
     font-weight: 600;
 }
 
+.scale-section span:first-child {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
 .scale-section .range {
-    font-size: 0.65rem;
+    font-size: 0.7rem;
     opacity: 0.8;
 }
 
 .scale-section.underweight {
-    background: rgba(234, 179, 8, 0.3);
-    color: #eab308;
+    background: rgba(0, 255, 255, 0.3);
+    color: #00ffff;
 }
 
 .scale-section.normal {
-    background: rgba(34, 197, 94, 0.3);
-    color: #22c55e;
+    background: rgba(57, 255, 20, 0.3);
+    color: #39ff14;
 }
 
 .scale-section.overweight {
-    background: rgba(249, 115, 22, 0.3);
-    color: #f97316;
+    background: rgba(255, 107, 0, 0.3);
+    color: #ff6b00;
 }
 
 .scale-section.obese {
-    background: rgba(239, 68, 68, 0.3);
-    color: #ef4444;
+    background: rgba(255, 0, 255, 0.3);
+    color: #ff00ff;
 }
 
 .scale-indicator {
     position: absolute;
-    top: 0;
-    width: 20px;
-    height: 20px;
+    top: 2px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
-    border: 3px solid var(--bg-primary);
+    border: 3px solid white;
     transform: translateX(-50%);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0 20px currentColor, 0 4px 15px rgba(0, 0, 0, 0.4);
     transition: left 0.5s ease;
+    animation: indicatorPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes indicatorPulse {
+
+    0%,
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+
+    50% {
+        transform: translateX(-50%) scale(1.15);
+    }
 }
 
 /* BMI Info */
 .bmi-info {
-    margin-bottom: 24px;
+    margin-bottom: 28px;
 }
 
 .info-description {
     text-align: center;
-    font-size: 1rem;
-    color: var(--text-secondary);
-    margin-bottom: 24px;
-    padding: 16px;
-    background: var(--bg-glass);
-    border-radius: var(--radius-md);
+    font-size: 1.05rem;
+    color: #e0b3ff;
+    margin-bottom: 28px;
+    padding: 20px;
+    background: rgba(60, 0, 100, 0.4);
+    border: 1px solid rgba(255, 0, 255, 0.2);
+    border-radius: 14px;
 }
 
 .healthy-range {
     text-align: center;
-    padding: 16px;
-    background: rgba(34, 197, 94, 0.1);
-    border: 1px solid rgba(34, 197, 94, 0.2);
-    border-radius: var(--radius-md);
-    margin-bottom: 24px;
+    padding: 20px;
+    background: linear-gradient(135deg, rgba(57, 255, 20, 0.15), rgba(0, 255, 255, 0.1));
+    border: 1px solid rgba(57, 255, 20, 0.3);
+    border-radius: 14px;
+    margin-bottom: 28px;
 }
 
 .healthy-range h4 {
-    font-size: 0.9rem;
-    color: var(--text-secondary);
-    margin-bottom: 8px;
+    font-size: 0.95rem;
+    color: #b366ff;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .healthy-range p {
-    font-size: 1.25rem;
-    color: #22c55e;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.5rem;
+    color: #39ff14;
     margin: 0;
+    text-shadow: 0 0 15px rgba(57, 255, 20, 0.5);
 }
 
 .tips-section h4 {
-    font-size: 0.95rem;
-    margin-bottom: 12px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1rem;
+    margin-bottom: 16px;
+    color: #00ffff;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .tips-section ul {
@@ -259,22 +362,32 @@
 }
 
 .tips-section li {
-    padding: 8px 0;
-    padding-left: 24px;
+    padding: 12px 0;
+    padding-left: 32px;
     position: relative;
-    color: var(--text-secondary);
+    color: #e0b3ff;
+    font-size: 0.95rem;
+    border-bottom: 1px solid rgba(255, 0, 255, 0.1);
+}
+
+.tips-section li:last-child {
+    border-bottom: none;
 }
 
 .tips-section li::before {
-    content: '✓';
+    content: '✦';
     position: absolute;
     left: 0;
-    color: var(--primary-500);
+    color: #ff00ff;
+    font-size: 1.1rem;
 }
 
 .save-profile-btn {
-    margin-top: 16px;
-    height: 44px !important;
+    margin-top: 20px;
+    height: 52px !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.05em !important;
 }
 
 /* No Result State */
@@ -284,61 +397,107 @@
     align-items: center;
     justify-content: center;
     height: 100%;
-    min-height: 400px;
+    min-height: 450px;
     text-align: center;
     padding: 40px;
 }
 
 .no-result-icon {
-    font-size: 64px;
-    margin-bottom: 24px;
+    font-size: 80px;
+    margin-bottom: 28px;
+    animation: float 3s ease-in-out infinite, rainbow 5s linear infinite;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px);
+    }
+}
+
+@keyframes rainbow {
+    0% {
+        filter: hue-rotate(0deg);
+    }
+
+    100% {
+        filter: hue-rotate(360deg);
+    }
 }
 
 .no-result h3 {
-    font-size: 1.5rem;
-    margin-bottom: 12px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.75rem;
+    margin-bottom: 16px;
+    color: #00ffff;
+    text-transform: uppercase;
 }
 
 .no-result p {
-    color: var(--text-tertiary);
-    max-width: 300px;
+    color: #b366ff;
+    max-width: 320px;
+    font-size: 1.05rem;
+    line-height: 1.6;
 }
 
 /* Info Row */
 .info-row {
-    margin-top: 24px;
+    margin-top: 28px;
 }
 
 .info-card {
     text-align: center;
-    padding: 24px 16px !important;
-    transition: transform 0.3s ease;
+    padding: 28px 20px !important;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
 }
 
 .info-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-8px) scale(1.03);
+    box-shadow: 0 0 40px rgba(255, 0, 255, 0.25) !important;
 }
 
 .info-card-icon {
-    font-size: 28px;
-    margin-bottom: 12px;
+    font-size: 36px;
+    margin-bottom: 16px;
+    animation: bounce 2s ease-in-out infinite;
+}
+
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
 }
 
 .info-card h4 {
-    font-size: 1rem;
-    margin-bottom: 4px;
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.05rem;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
 }
 
 .info-card p {
-    font-size: 0.85rem;
-    color: var(--text-tertiary);
+    font-size: 0.9rem;
+    color: #b366ff;
     margin: 0;
 }
 
 /* Responsive */
 @media (max-width: 768px) {
     .bmi-value {
-        font-size: 3.5rem;
+        font-size: 4rem;
     }
 
     .bmi-category {

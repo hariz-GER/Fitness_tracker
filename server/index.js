@@ -1,13 +1,9 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
-const connectDB = require('./config/db');
 
 // Load env vars
 dotenv.config();
-
-// Connect to database
-connectDB();
 
 const app = express();
 
@@ -20,25 +16,49 @@ app.use(cors({
     credentials: true
 }));
 
-// Route files
-const authRoutes = require('./routes/auth');
-const workoutRoutes = require('./routes/workouts');
-const mealRoutes = require('./routes/meals');
-const progressRoutes = require('./routes/progress');
-const reminderRoutes = require('./routes/reminders');
+// Demo Mode flag - set to true to use in-memory storage instead of MongoDB
+const DEMO_MODE = process.env.DEMO_MODE === 'true' || !process.env.MONGODB_URI || process.env.MONGODB_URI.includes('YOUR_');
 
-// Mount routers
-app.use('/api/auth', authRoutes);
-app.use('/api/workouts', workoutRoutes);
-app.use('/api/meals', mealRoutes);
-app.use('/api/progress', progressRoutes);
-app.use('/api/reminders', reminderRoutes);
+if (DEMO_MODE) {
+    console.log('\n🎮 DEMO MODE ACTIVE - Using in-memory storage\n');
+
+    // Demo routes
+    const demoAuthRoutes = require('./routes/demo/auth');
+    const demoWorkoutRoutes = require('./routes/demo/workouts');
+    const demoMealRoutes = require('./routes/demo/meals');
+    const demoProgressRoutes = require('./routes/demo/progress');
+    const demoReminderRoutes = require('./routes/demo/reminders');
+
+    app.use('/api/auth', demoAuthRoutes);
+    app.use('/api/workouts', demoWorkoutRoutes);
+    app.use('/api/meals', demoMealRoutes);
+    app.use('/api/progress', demoProgressRoutes);
+    app.use('/api/reminders', demoReminderRoutes);
+} else {
+    // Connect to MongoDB
+    const connectDB = require('./config/db');
+    connectDB();
+
+    // Production routes
+    const authRoutes = require('./routes/auth');
+    const workoutRoutes = require('./routes/workouts');
+    const mealRoutes = require('./routes/meals');
+    const progressRoutes = require('./routes/progress');
+    const reminderRoutes = require('./routes/reminders');
+
+    app.use('/api/auth', authRoutes);
+    app.use('/api/workouts', workoutRoutes);
+    app.use('/api/meals', mealRoutes);
+    app.use('/api/progress', progressRoutes);
+    app.use('/api/reminders', reminderRoutes);
+}
 
 // Health check route
 app.get('/api/health', (req, res) => {
     res.status(200).json({
         success: true,
         message: 'Fitness Tracker API is running',
+        mode: DEMO_MODE ? 'DEMO' : 'PRODUCTION',
         timestamp: new Date().toISOString()
     });
 });
@@ -68,6 +88,7 @@ app.listen(PORT, () => {
   🏋️  Fitness Tracker API Server
   ================================
   ✅ Server running on port ${PORT}
+  🎮 Mode: ${DEMO_MODE ? 'DEMO (no database required)' : 'PRODUCTION'}
   📍 Health check: http://localhost:${PORT}/api/health
   🔐 Auth API: http://localhost:${PORT}/api/auth
   💪 Workouts API: http://localhost:${PORT}/api/workouts

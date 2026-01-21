@@ -1,29 +1,30 @@
 import { useState, useEffect } from 'react';
 import {
     Card, Button, Modal, Form, Input, Select, InputNumber,
-    Row, Col, Tag, Empty, Spin, Popconfirm, message, Tabs, Timeline
+    Row, Col, Tag, Empty, Spin, Popconfirm, message
 } from 'antd';
 import {
     PlusOutlined, DeleteOutlined, EditOutlined, FireOutlined,
-    ClockCircleOutlined, ThunderboltOutlined, CalendarOutlined,
+    ClockCircleOutlined, CalendarOutlined,
 } from '@ant-design/icons';
 import { workoutAPI } from '../services/api';
+import { useAuth } from '../context/AuthContext';
 import dayjs from 'dayjs';
 import './Workouts.css';
 
 const { Option } = Select;
 const { TextArea } = Input;
 
+// MET values for different workout types (Metabolic Equivalent of Task)
+// These are average values used to calculate calories burned
 const workoutTypes = [
-    { value: 'cardio', label: 'Cardio', icon: '🏃', color: '#3b82f6' },
-    { value: 'strength', label: 'Strength', icon: '💪', color: '#8b5cf6' },
-    { value: 'hiit', label: 'HIIT', icon: '⚡', color: '#f97316' },
-    { value: 'yoga', label: 'Yoga', icon: '🧘', color: '#22c55e' },
-    { value: 'sports', label: 'Sports', icon: '⚽', color: '#06b6d4' },
-    { value: 'mixed', label: 'Mixed', icon: '🎯', color: '#ec4899' },
+    { value: 'cardio', label: 'Cardio', icon: '🏃', color: '#3b82f6', met: { low: 5, moderate: 8, high: 11, extreme: 14 } },
+    { value: 'strength', label: 'Strength', icon: '💪', color: '#8b5cf6', met: { low: 3, moderate: 5, high: 6, extreme: 8 } },
+    { value: 'hiit', label: 'HIIT', icon: '⚡', color: '#f97316', met: { low: 8, moderate: 10, high: 12, extreme: 15 } },
+    { value: 'yoga', label: 'Yoga', icon: '🧘', color: '#22c55e', met: { low: 2, moderate: 3, high: 4, extreme: 5 } },
+    { value: 'sports', label: 'Sports', icon: '⚽', color: '#06b6d4', met: { low: 5, moderate: 7, high: 9, extreme: 11 } },
+    { value: 'mixed', label: 'Mixed', icon: '🎯', color: '#ec4899', met: { low: 4, moderate: 6, high: 8, extreme: 10 } },
 ];
-
-const exerciseCategories = ['cardio', 'strength', 'flexibility', 'balance', 'sports'];
 
 const intensityLevels = [
     { value: 'low', label: 'Low', color: '#22c55e' },
@@ -32,17 +33,44 @@ const intensityLevels = [
     { value: 'extreme', label: 'Extreme', color: '#ef4444' },
 ];
 
+// Calculate calories burned using MET formula
+// Calories = MET × weight (kg) × duration (hours)
+const calculateCalories = (type, intensity, duration, weight = 70) => {
+    const workoutType = workoutTypes.find(t => t.value === type);
+    if (!workoutType || !intensity || !duration) return 0;
+
+    const met = workoutType.met[intensity] || workoutType.met.moderate;
+    const durationInHours = duration / 60;
+    const calories = Math.round(met * weight * durationInHours);
+
+    return calories;
+};
+
 const Workouts = () => {
     const [workouts, setWorkouts] = useState([]);
     const [loading, setLoading] = useState(true);
     const [modalVisible, setModalVisible] = useState(false);
     const [editingWorkout, setEditingWorkout] = useState(null);
     const [submitting, setSubmitting] = useState(false);
+    const [calculatedCalories, setCalculatedCalories] = useState(0);
     const [form] = Form.useForm();
+    const { user } = useAuth();
+
+    // Get user's weight from profile (default to 70kg if not set)
+    const userWeight = user?.profile?.weight || 70;
 
     useEffect(() => {
         fetchWorkouts();
     }, []);
+
+    // Update calories when form values change
+    const handleValuesChange = (changedValues, allValues) => {
+        const { type, intensity, duration } = allValues;
+        if (type && intensity && duration) {
+            const calories = calculateCalories(type, intensity, duration, userWeight);
+            setCalculatedCalories(calories);
+        }
+    };
 
     const fetchWorkouts = async () => {
         try {
@@ -60,8 +88,10 @@ const Workouts = () => {
         try {
             setSubmitting(true);
 
+            // Use calculated calories
             const workoutData = {
                 ...values,
+                totalCaloriesBurned: calculatedCalories,
                 exercises: values.exercises || [],
                 completedAt: new Date(),
             };
@@ -71,12 +101,13 @@ const Workouts = () => {
                 message.success('Workout updated successfully!');
             } else {
                 await workoutAPI.create(workoutData);
-                message.success('Workout logged successfully! 💪');
+                message.success(`Workout logged! You burned ${calculatedCalories} calories! 🔥`);
             }
 
             setModalVisible(false);
             form.resetFields();
             setEditingWorkout(null);
+            setCalculatedCalories(0);
             fetchWorkouts();
         } catch (error) {
             message.error('Failed to save workout');
@@ -92,9 +123,11 @@ const Workouts = () => {
             type: workout.type,
             duration: workout.duration,
             intensity: workout.intensity,
-            totalCaloriesBurned: workout.totalCaloriesBurned,
             notes: workout.notes,
         });
+        // Calculate calories for the existing workout
+        const calories = calculateCalories(workout.type, workout.intensity, workout.duration, userWeight);
+        setCalculatedCalories(calories);
         setModalVisible(true);
     };
 
@@ -111,6 +144,9 @@ const Workouts = () => {
     const openNewWorkoutModal = () => {
         setEditingWorkout(null);
         form.resetFields();
+        // Set initial calculated calories
+        const initialCalories = calculateCalories('mixed', 'moderate', 30, userWeight);
+        setCalculatedCalories(initialCalories);
         setModalVisible(true);
     };
 
@@ -279,6 +315,7 @@ const Workouts = () => {
                     setModalVisible(false);
                     form.resetFields();
                     setEditingWorkout(null);
+                    setCalculatedCalories(0);
                 }}
                 footer={null}
                 width={600}
@@ -288,11 +325,11 @@ const Workouts = () => {
                     form={form}
                     layout="vertical"
                     onFinish={handleSubmit}
+                    onValuesChange={handleValuesChange}
                     initialValues={{
                         type: 'mixed',
                         intensity: 'moderate',
                         duration: 30,
-                        totalCaloriesBurned: 200,
                     }}
                 >
                     <Form.Item
@@ -336,37 +373,33 @@ const Workouts = () => {
                         </Col>
                     </Row>
 
-                    <Row gutter={16}>
-                        <Col span={12}>
-                            <Form.Item
-                                name="duration"
-                                label="Duration (minutes)"
-                                rules={[{ required: true, message: 'Please enter duration' }]}
-                            >
-                                <InputNumber
-                                    min={1}
-                                    max={480}
-                                    size="large"
-                                    style={{ width: '100%' }}
-                                    placeholder="30"
-                                />
-                            </Form.Item>
-                        </Col>
-                        <Col span={12}>
-                            <Form.Item
-                                name="totalCaloriesBurned"
-                                label="Calories Burned"
-                            >
-                                <InputNumber
-                                    min={0}
-                                    max={5000}
-                                    size="large"
-                                    style={{ width: '100%' }}
-                                    placeholder="200"
-                                />
-                            </Form.Item>
-                        </Col>
-                    </Row>
+                    <Form.Item
+                        name="duration"
+                        label="Duration (minutes)"
+                        rules={[{ required: true, message: 'Please enter duration' }]}
+                    >
+                        <InputNumber
+                            min={1}
+                            max={480}
+                            size="large"
+                            style={{ width: '100%' }}
+                            placeholder="30"
+                        />
+                    </Form.Item>
+
+                    {/* Auto-calculated Calories Display */}
+                    <div className="calories-display">
+                        <div className="calories-label">
+                            <FireOutlined /> Estimated Calories Burned
+                        </div>
+                        <div className="calories-value">
+                            {calculatedCalories} <span className="calories-unit">kcal</span>
+                        </div>
+                        <div className="calories-info">
+                            Based on your weight ({userWeight}kg), {form.getFieldValue('type') || 'mixed'} workout,
+                            {' '}{form.getFieldValue('intensity') || 'moderate'} intensity for {form.getFieldValue('duration') || 30} minutes
+                        </div>
+                    </div>
 
                     <Form.Item name="notes" label="Notes (optional)">
                         <TextArea
